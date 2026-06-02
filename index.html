@@ -671,10 +671,10 @@ function fileToBase64(file) {
 // 主生成函式
 async function generatePost() {
   const apiKey = document.getElementById('api-key').value.trim();
-  if (!apiKey || !apiKey.startsWith('AIza')) {
+  if (!apiKey || apiKey.length < 10) {
     document.getElementById('api-key').style.borderColor = '#EF4444';
     setTimeout(() => document.getElementById('api-key').style.borderColor = '', 2000);
-    alert('請先填入正確的 Gemini API 金鑰（以 AIza 開頭）');
+    alert('請先填入正確的 Gemini API 金鑰');
     return;
   }
   // 記住金鑰
